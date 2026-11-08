@@ -1,0 +1,13 @@
+scenario_id,category,query,http_status,status,intent,response,latency_ms,server_latency_ms,retrieval_ms,llm_ms,top_score,top_faq_id,prompt_tokens,output_tokens,total_tokens,auto_check,observation
+EVAL-01,Relevansi Dasar,berapa jatah cuti tahunan saya?,503,error,faq,Layanan AI sedang tidak dapat merespons. Silakan coba lagi beberapa saat.,729,,,,,,,,,CHECK,
+EVAL-02,Relevansi Dasar,gimana cara reset password vpn ya,503,error,faq,Layanan AI sedang tidak dapat merespons. Silakan coba lagi beberapa saat.,798,,,,,,,,,CHECK,
+EVAL-03,Parafrase/Sinonim,"saya lupa kata sandi laptop kantor, harus gimana?",0,,,"CLIENT ERROR: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=120)",794,,,,,,,,,CHECK,
+EVAL-04,Di Luar Cakupan,apakah kantor menyediakan tempat parkir motor gratis?,200,success,faq,"Maaf, saya tidak menemukan informasi yang relevan di knowledge base. Silakan hubungi tim People/IT Support atau buat tiket IT untuk bantuan lebih lanjut.",597,,,,,,,,,,
+EVAL-05,Di Luar Cakupan,siapa nama CEO perusahaan ini?,503,error,faq,Layanan AI sedang tidak dapat merespons. Silakan coba lagi beberapa saat.,889,,,,,,,,,,
+EVAL-06,Tool Call Valid,apa status TICKET-0005?,200,success,ticket_status,"Tiket TICKET-0005 (Access): ""Reset password VPN gagal terus"" - Status: Diproses, terakhir diperbarui 2026-08-27.",4,,,,,,,,,PASS,
+EVAL-07,Tool Call Invalid,apa status TICKET-9999?,200,success,ticket_status,Tiket TICKET-9999 tidak ditemukan. Mohon periksa kembali ID tiket Anda.,4,,,,,,,,,PASS,
+EVAL-08,Tool Call Ambigu,tiket saya gimana ya?,200,success,faq,"Maaf, saya tidak menemukan informasi yang relevan di knowledge base. Silakan hubungi tim People/IT Support atau buat tiket IT untuk bantuan lebih lanjut.",786,,,,,,,,,CHECK,
+EVAL-09,Routing Ambigu,kenapa laptop saya lambat dan gimana cara cek tiket yang saya buat soal itu?,200,error,ticket_status,"Mohon sebutkan ID tiket Anda, contoh: TICKET-0042.",1,,,,,,,,,,
+EVAL-10,Konsistensi,berapa hari cuti tahunan yang saya dapat?,503,error,faq,Layanan AI sedang tidak dapat merespons. Silakan coba lagi beberapa saat.,803,,,,,,,,,CHECK,
+EVAL-11,Beban Panjang,"Tolong jelaskan sedetail-detailnya seluruh kebijakan cuti, reset password, permintaan perangkat, dan proses onboarding sekaligus dalam satu jawaban.",503,error,faq,Layanan AI sedang tidak dapat merespons. Silakan coba lagi beberapa saat.,875,,,,,,,,,,
+EVAL-12,Resource/Token,halo,200,success,faq,"Maaf, saya tidak menemukan informasi yang relevan di knowledge base. Silakan hubungi tim People/IT Support atau buat tiket IT untuk bantuan lebih lanjut.",493,,,,,,,,,,
